@@ -368,7 +368,7 @@ body {
         width: 100% !important;
         display: flex;
         align-items: center;
-        width: calc(100% - 115px) !important;
+        width: calc(100% - 110px) !important;
     }
 
     .button {
@@ -378,6 +378,18 @@ body {
 
     .button i {
         font-size: 20px !important;
+    }
+
+    .control:last-child .button i {
+        left: 18px;
+    }
+
+    .control:nth-child(2) .button i.fa-play {
+        left: 18px;
+    }
+
+    .control:first-child .button i {
+        right: 18px;
     }
 }
 
