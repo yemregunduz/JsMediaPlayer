@@ -217,17 +217,7 @@ body {
 
 #album-art.active img.active {
     z-index: 1;
-    animation: rotateAlbumArt 3s linear 0s infinite forwards;
-}
-
-@keyframes rotateAlbumArt {
-    0% {
-        transform: rotateZ(0);
-    }
-
-    100% {
-        transform: rotateZ(360deg);
-    }
+    animation: playSong 3s linear 0s infinite forwards;
 }
 
 #buffer-box {
@@ -285,36 +275,6 @@ body {
     padding: 12px 0;
     position: relative;
 }
-
-/* .button {
-    width: 30px;
-    height: 26px;
-    padding: 25px;
-    background-color: #fff;
-    border-radius: 6px;
-    cursor: pointer;
-} */
-
-/* .button i {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    color: #d6dee7;
-    font-size: 30px;
-    text-align: center;
-    line-height: 1;
-} */
-
-/* .button,
-.button i {
-    transition: 0.2s ease all;
-} */
-
-/* .button:hover {
-    background-color: #b37575;
-} */
-
 
 .button {
     cursor: pointer;
@@ -390,4 +350,14 @@ body {
 
 .button-backward:hover::before {
     margin-left: 0;
+}
+
+@keyframes playSong {
+    0% {
+        transform: rotateZ(0);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
