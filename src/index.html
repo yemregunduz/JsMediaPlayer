@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Media Player</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css"
+        integrity="sha512-FEQLazq9ecqLN5T6wWq26hCZf7kPqUbFC9vsHNbXMJtSZZWAcbJspT+/NEAQkBfFReZ8r9QlA9JHaAuo28MTJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<div id="app-cover">
+    <div id="bg-artwork"></div>
+    <div id="bg-layer"></div>
+    <div id="player">
+        <div id="player-track">
+            <div id="album-name"></div>
+            <div id="track-name"></div>
+            <div id="track-time">
+                <div id="current-time"></div>
+                <div id="track-length"></div>
+            </div>
+            <div id="s-area">
+                <div id="ins-time"></div>
+                <div id="s-hover"></div>
+                <div id="seek-bar"></div>
+            </div>
+        </div>
+        <div id="player-content">
+            <div id="album-art">
+                <img src="./assets/images/kuskunum.webp" class="active"
+                    id="_1">
+                <img src="./assets/images/kuan-dunya.jpg" id="_2">
+                <img src="./assets/images/altaylardan-tunaya.webp"id="_3">
+                <div id="buffer-box">Buffering ...</div>
+            </div>
+            <div id="player-controls">
+                <div class="control">
+                    <div class="button" id="play-previous">
+                        <i class="fa fa-backward"></i>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="button" id="play-pause-button">
+                        <i class="fa fa-play"></i>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="button" id="play-next">
+                        <i class="fa fa-forward"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
