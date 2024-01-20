@@ -11,6 +11,46 @@
         opacity: 1;
     }
 }
+@media (max-width: 470px) {
+    #app-cover {
+        width: calc(100% - 40px) !important;
+    }
+
+    #album-art{
+        width:75px !important;
+        height: 75px !important;
+        margin-left:25px !important
+    }
+
+    #album-art.active {
+        top: -35px !important;
+    }
+
+    #player-track{
+        padding-left: 100px !important ;
+    }
+
+    #player-controls {
+        width: 100%;
+        height: 100%;
+        float: right;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-right: 30px;
+        gap: 0.5rem;
+    }
+
+    .button{
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .button i{
+        font-size: 20px !important;
+    }
+}
 body {
     font-family: Helvetica, Arial;
     margin: 0;
@@ -269,7 +309,6 @@ body {
 #player-controls {
     width: 250px;
     height: 100%;
-    margin: 0 5px 0 141px;
     float: right;
     overflow: hidden;
     display:flex;
