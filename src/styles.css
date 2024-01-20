@@ -28,7 +28,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-    filter: blur(40px);
+    filter: blur(10px);
     -webkit-filter: blur(10px);
     z-index: 1;
 }
@@ -173,7 +173,7 @@ body {
     margin-left: 40px;
     transform: rotateZ(0);
     transition: 0.3s ease all;
-    box-shadow: 0 0 0 6px #b37575;;
+    box-shadow: 0 0 0 6px #b37575;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -195,6 +195,7 @@ body {
     background-color: #b37575;
     border-radius: 50%;
     box-shadow: inset 0 0 0 2px #fff;
+    opacity: 0.7;
     z-index: 2;
 }
 
@@ -273,39 +274,120 @@ body {
     margin: 0 5px 0 141px;
     float: right;
     overflow: hidden;
+    display:flex;
+    align-items: center;
+    gap:.5rem
+    
 }
 
 .control {
     float: left;
     padding: 12px 0;
+    position: relative;
 }
 
-.button {
-    width: 26px;
+/* .button {
+    width: 30px;
     height: 26px;
     padding: 25px;
     background-color: #fff;
     border-radius: 6px;
     cursor: pointer;
-}
+} */
 
-.button i {
+/* .button i {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+
     color: #d6dee7;
-    font-size: 26px;
+    font-size: 30px;
     text-align: center;
     line-height: 1;
-}
+} */
 
-.button,
+/* .button,
 .button i {
     transition: 0.2s ease all;
+} */
+
+/* .button:hover {
+    background-color: #b37575;
+} */
+
+
+.button {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.button:hover {
-    background-color: #b37575;
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 1px #b37575;
+    transition-duration: .5s;
+}
+
+.button i {
+    position: absolute;
+    color: #b37575;
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+
+.control:last-child .button i {
+    left: 20px;
+}
+
+.control:nth-child(2) .button i.fa-play {
+    left: 20px;
+}
+
+.control:first-child .button i {
+    right: 20px;
 }
 
 .button:hover i {
     color: #fff;
+}
+
+.button-fill:hover::before {
+    box-shadow: inset 0 0 0 60px #b37575;
+}
+
+.button-forward::before, .button-backward::before {
+    border-radius: 0;
+    box-shadow: inset 0 0 0 60px #b37575;
+}
+
+.button-forward::before{
+    margin-left: -100%;
+}
+
+.button-forward:hover::before {
+    margin-left: 0;
+}
+
+.button-backward::before{
+    margin-left: 100%;
+}
+
+
+.button-backward:hover::before {
+    margin-left: 0;
 }
