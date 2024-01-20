@@ -2,60 +2,12 @@
     outline: none;
 }
 
-@keyframes slowLoad {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-@media (max-width: 470px) {
-    #app-cover {
-        width: calc(100% - 40px) !important;
-    }
-
-    #album-art{
-        width:75px !important;
-        height: 75px !important;
-        margin-left:25px !important
-    }
-
-    #album-art.active {
-        top: -35px !important;
-    }
-
-    #player-track{
-        padding-left: 100px !important ;
-    }
-
-    #player-controls {
-        width: 100%;
-        height: 100%;
-        float: right;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        padding-right: 30px;
-        gap: 0.5rem;
-    }
-
-    .button{
-        width: 50px !important;
-        height: 50px !important;
-    }
-
-    .button i{
-        font-size: 20px !important;
-    }
-}
 body {
     font-family: Helvetica, Arial;
     margin: 0;
     background-color: #ffeff0;
 }
+
 #app-cover {
     position: absolute;
     top: 50%;
@@ -311,16 +263,9 @@ body {
     height: 100%;
     float: right;
     overflow: hidden;
-    display:flex;
+    display: flex;
     align-items: center;
-    gap:.5rem
-    
-}
-
-.control {
-    float: left;
-    padding: 12px 0;
-    position: relative;
+    gap: .5rem
 }
 
 .button {
@@ -377,12 +322,13 @@ body {
     box-shadow: inset 0 0 0 60px #b37575;
 }
 
-.button-forward::before, .button-backward::before {
+.button-forward::before,
+.button-backward::before {
     border-radius: 0;
     box-shadow: inset 0 0 0 60px #b37575;
 }
 
-.button-forward::before{
+.button-forward::before {
     margin-left: -100%;
 }
 
@@ -390,13 +336,49 @@ body {
     margin-left: 0;
 }
 
-.button-backward::before{
+.button-backward::before {
     margin-left: 100%;
 }
 
 
 .button-backward:hover::before {
     margin-left: 0;
+}
+
+@media (max-width: 470px) {
+    #app-cover {
+        width: calc(100% - 40px) !important;
+    }
+
+    #album-art {
+        width: 85px !important;
+        height: 85px !important;
+        margin-left: 25px !important
+    }
+
+    #album-art.active {
+        top: -35px !important;
+    }
+
+    #player-track {
+        padding-left: 100px !important;
+    }
+
+    #player-controls {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        width: calc(100% - 115px) !important;
+    }
+
+    .button {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .button i {
+        font-size: 20px !important;
+    }
 }
 
 @keyframes playSong {
