@@ -13,58 +13,53 @@
 
 <body>
 
-<div id="app-cover">
-    <div id="bg-artwork"></div>
-    <div id="bg-layer"></div>
-    <div id="player">
-        <div id="player-track">
-            <div id="album-name"></div>
-            <div id="track-name"></div>
-            <div id="track-time">
-                <div id="current-time"></div>
-                <div id="track-length"></div>
-            </div>
-            <div id="s-area">
-                <div id="ins-time"></div>
-                <div id="s-hover"></div>
-                <div id="seek-bar"></div>
-            </div>
-        </div>
-        <div id="player-content">
-            <div id="album-art">
-                <img src="./assets/images/kuskunum.webp" class="active"
-                    id="_1">
-                <img src="./assets/images/cicekler-acsin.webp" id="_2"/>
-                <img src="./assets/images/fatmam.jpg" id="_3">
-                <img src="./assets/images/kuan-dunya.jpg" id="_4">
-                <img src="./assets/images/altaylardan-tunaya.webp" id="_5">
-                <div id="buffer-box">Yükleniyor ...</div>
-            </div>
-            <div id="player-controls">
-                <div class="control">
-                    <!-- <div class="button icon icon-fill" id="play-previous">
-                        <i class="fa fa-backward"></i>
-
-                    </div> -->
-                    <div class="button button-backward" id="play-previous">
-                        <i class="fa fa-backward"></i>
-                    </div>
-
+    <div id="app-cover">
+        <div id="bg-artwork"></div>
+        <div id="bg-layer"></div>
+        <div id="player">
+            <div id="music-player">
+                <div id="song-name"></div>
+                <div id="artist-name"></div>
+                <div id="song-time">
+                    <div id="current-time"></div>
+                    <div id="song-length"></div>
                 </div>
-                <div class="control">
-                    <div class="button button-fill" id="play-pause-button">
-                        <i class="fa fa-play"></i>
-                    </div>
+                <div id="seek-container">
+                    <div id="target-time"></div>
+                    <div id="tooltip"></div>
+                    <div id="seek-bar"></div>
                 </div>
-                <div class="control">
-                    <div class="button button-forward" id="play-next">
-                        <i class="fa fa-forward"></i>
+            </div>
+            <div id="player-content">
+                <div id="album-art">
+                    <img src="./assets/images/kuskunum.webp" class="active" id="1">
+                    <img src="./assets/images/cicekler-acsin.webp" id="2" />
+                    <img src="./assets/images/mevsim-bahar-olunca.jpg" id="3">
+                    <img src="./assets/images/fatmam.jpg" id="4">
+                    <img src="./assets/images/kuan-dunya.jpg" id="5">
+                    <img src="./assets/images/altaylardan-tunaya.webp" id="6">
+                    <div id="loading">Yükleniyor ...</div>
+                </div>
+                <div id="player-controls">
+                    <div class="control">
+                        <div class="button button-backward" id="play-previous">
+                            <i class="fa fa-backward"></i>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="button button-fill" id="play-pause-button">
+                            <i class="fa fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="button button-forward" id="play-next">
+                            <i class="fa fa-forward"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <script src="./main.js"></script>
 </body>
