@@ -347,37 +347,37 @@ body {
 
 @media (max-width: 470px) {
     #app-cover {
-        width: calc(100% - 40px) !important;
+        width: calc(100% - 40px) 
     }
 
     #album-art {
-        width: 85px !important;
-        height: 85px !important;
-        margin-left: 25px !important
+        width: 85px;
+        height: 85px;
+        margin-left: 25px;
     }
 
     #album-art.active {
-        top: -35px !important;
+        top: -35px;
     }
 
     #player-track {
-        padding-left: 100px !important;
+        padding-left: 100px;
     }
 
     #player-controls {
-        width: 100% !important;
+        width: 100%;
         display: flex;
         align-items: center;
-        width: calc(100% - 110px) !important;
+        width: calc(100% - 110px);
     }
 
     .button {
-        width: 50px !important;
-        height: 50px !important;
+        width: 50px;
+        height: 50px;
     }
 
     .button i {
-        font-size: 20px !important;
+        font-size: 20px;
     }
 
     .control:last-child .button i {
