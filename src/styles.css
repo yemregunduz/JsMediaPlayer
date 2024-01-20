@@ -224,7 +224,7 @@ body {
 
 #artist-image.active img.active {
     z-index: 1;
-    animation: playSong 3s linear 0s infinite forwards;
+    animation: playSong 5s linear 0s infinite forwards;
 }
 
 #loading-box {
