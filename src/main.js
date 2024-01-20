@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   (function () {
+    if (document.body.clientWidth < 576) {
+      document.body.transform = "scale(0.75)";
+    }
     let playerTrack = document.getElementById("player-track"),
       bgArtwork = document.getElementById("bg-artwork"),
       bgArtworkUrl,
