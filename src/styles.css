@@ -296,10 +296,12 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    transition: all 0.5s ease;
     border-radius: 25px;
     box-shadow: inset 0 0 0 2px var(--primary);
-    transition-duration: .5s;
+}
+
+.button:hover::before, .button:hover::after{
+    transition: all 0.5s ease;
 }
 
 .button:not(#play-pause-button) {
@@ -311,10 +313,24 @@ body {
     box-shadow: none;
 }
 
+.button#play-pause-button{
+    background: var(--primary);
+}
+
+
+.button#play-pause-button i{
+    color: #fff
+}
+
+
+
 .button i {
     position: absolute;
     color: var(--primary);
     font-size: 20px;
+}
+
+.button:hover i{
     transition: all 0.5s ease;
 }
 
@@ -332,10 +348,6 @@ body {
 
 .button:hover i {
     color: #fff;
-}
-
-.button-fill:hover::before {
-    box-shadow: inset 0 0 0 60px var(--primary);
 }
 
 .button-forward::before,
