@@ -4,14 +4,14 @@
 
 :root {
     --primary: #b37575;
+    --secondary : #;
     --seek-bar-bg: #fd6d94;
-    --body-bg: #ffeff0;
 }
 
 body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: var(--body-bg);
+    background-color: #ffeff0;
 }
 
 #app-cover {
@@ -172,7 +172,7 @@ body {
     z-index: 2;
 }
 
-#album-art {
+#artist-image {
     position: absolute;
     top: -40px;
     width: 115px;
@@ -185,12 +185,12 @@ body {
     overflow: hidden;
 }
 
-#album-art.active {
+#artist-image.active {
     top: -60px;
     box-shadow: 0 0 0 4px var(--primary), 0 30px 50px -15px var(--primary);
 }
 
-#album-art:before {
+#artist-image:before {
     content: "";
     position: absolute;
     top: 50%;
@@ -206,7 +206,7 @@ body {
     z-index: 2;
 }
 
-#album-art img {
+#artist-image img {
     display: block;
     position: absolute;
     top: 0;
@@ -217,12 +217,12 @@ body {
     z-index: -1;
 }
 
-#album-art img.active {
+#artist-image img.active {
     opacity: 1;
     z-index: 1;
 }
 
-#album-art.active img.active {
+#artist-image.active img.active {
     z-index: 1;
     animation: playSong 3s linear 0s infinite forwards;
 }
@@ -246,22 +246,22 @@ body {
     z-index: 2;
 }
 
-#album-art img,
+#artist-image img,
 #loading-box {
     transition: 0.1s linear all;
 }
 
-#album-art.buffering img {
+#artist-image.buffering img {
     opacity: 0.25;
 }
 
-#album-art.buffering img.active {
+#artist-image.buffering img.active {
     opacity: 0.8;
     filter: blur(2px);
     -webkit-filter: blur(2px);
 }
 
-#album-art.buffering #loading-box {
+#artist-image.buffering #loading-box {
     opacity: 1;
 }
 
@@ -357,13 +357,13 @@ body {
         width: calc(100% - 40px)
     }
 
-    #album-art {
+    #artist-image {
         width: 85px;
         height: 85px;
         margin-left: 25px;
     }
 
-    #album-art.active {
+    #artist-image.active {
         top: -35px;
     }
 

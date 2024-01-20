@@ -2,10 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   (function () {
     let musicPlayer = document.getElementById("music-player"),
       bgArtwork = document.getElementById("bg-artwork"),
-      bgArtworkUrl,
       artistName = document.getElementById("artist-name"),
       songName = document.getElementById("song-name"),
-      albumArt = document.getElementById("album-art"),
+      artistImage = document.getElementById("artist-image"),
       seekContainer = document.getElementById("seek-container"),
       seekBar = document.getElementById("seek-bar"),
       songTime = document.getElementById("song-time"),
@@ -81,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function play() {
       musicPlayer.classList.add("active");
-      albumArt.classList.add("active");
+      artistImage.classList.add("active");
       checkIfIsLoading();
       i.className = "fa fa-pause";
       audio.play();
@@ -89,9 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function pause() {
       musicPlayer.classList.remove("active");
-      albumArt.classList.remove("active");
+      artistImage.classList.remove("active");
       clearInterval(loadingInterval);
-      albumArt.classList.remove("buffering");
+      artistImage.classList.remove("buffering");
       i.className = "fa fa-play";
       audio.pause();
     }
@@ -189,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function nextSong() {
       seekBar.style.width = "0";
       tProgress.innerText = "00:00";
-      albumArt.classList.remove("buffering");
+      artistImage.classList.remove("buffering");
       selectSong(1);
       clearInterval(loadingInterval);
     }
@@ -205,8 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
       clearInterval(loadingInterval);
       loadingInterval = setInterval(function () {
         if (nTime == 0 || bTime - nTime > 1000)
-          albumArt.classList.add("buffering");
-        else albumArt.classList.remove("buffering");
+          artistImage.classList.add("buffering");
+        else artistImage.classList.remove("buffering");
 
         bTime = new Date();
         bTime = bTime.getTime();
@@ -229,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentIndex > -1 && currentIndex < musics.length) {
         if (flag == 0) i.className = "fa fa-play";
         else {
-          albumArt.classList.remove("buffering");
+          artistImage.classList.remove("buffering");
           i.className = "fa fa-pause";
         }
 
@@ -256,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (flag != 0) {
         audio.play();
         musicPlayer.classList.add("active");
-        albumArt.classList.add("active");
+        artistImage.classList.add("active");
 
         clearInterval(loadingInterval);
         checkIfIsLoading();
@@ -267,9 +266,9 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector("img.active").classList.remove("active");
       document.getElementById(artwork).classList.add("active");
 
-      bgArtworkUrl = document.getElementById(artwork).getAttribute("src");
+      const artworkBgUrl = document.getElementById(artwork).getAttribute("src");
 
-      bgArtwork.style.backgroundImage = "url(" + bgArtworkUrl + ")";
+      bgArtwork.style.backgroundImage = "url(" + artworkBgUrl + ")";
     }
 
     function initPlayer() {
