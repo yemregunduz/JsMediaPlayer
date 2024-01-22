@@ -2,7 +2,7 @@
 
 # Müzik Çalar
 
-Bu proje, basit bir web tabanlı müzik çalar uygulamasını içerir. JavaScript ve HTML kullanılarak geliştirilmiştir.
+Bu proje, basit bir web tabanlı müzik çalar uygulamasını içerir.
 
 ## Özellikler
 
