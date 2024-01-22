@@ -1,19 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   (function () {
-    let musicPlayer = document.getElementById("music-player"),
-      bgArtwork = document.getElementById("bg-artwork"),
-      artistName = document.getElementById("artist-name"),
-      songName = document.getElementById("song-name"),
-      artistImage = document.getElementById("artist-image"),
-      seekContainer = document.getElementById("seek-container"),
-      seekBar = document.getElementById("seek-bar"),
-      songTime = document.getElementById("song-time"),
-      targetTime = document.getElementById("target-time"),
-      sHover = document.getElementById("tooltip"),
-      playPauseButton = document.getElementById("play-pause-button"),
-      i = playPauseButton.querySelector("i"),
-      tProgress = document.getElementById("current-time"),
-      songLength = document.getElementById("song-length"),
+    let musicPlayer = document.getElementById('music-player'),
+      bgArtwork = document.getElementById('bg-artwork'),
+      artistName = document.getElementById('artist-name'),
+      songName = document.getElementById('song-name'),
+      artistImage = document.getElementById('artist-image'),
+      seekContainer = document.getElementById('seek-container'),
+      seekBar = document.getElementById('seek-bar'),
+      songTime = document.getElementById('song-time'),
+      targetTime = document.getElementById('target-time'),
+      sHover = document.getElementById('tooltip'),
+      playPauseButton = document.getElementById('play-pause-button'),
+      i = playPauseButton.querySelector('i'),
+      tProgress = document.getElementById('current-time'),
+      songLength = document.getElementById('song-length'),
       seekLength,
       seekLocation,
       seekBarPosition,
@@ -29,46 +29,46 @@ document.addEventListener("DOMContentLoaded", function () {
       nTime = 0,
       loadingInterval = null,
       timeFlag = false,
-      playPreviousTrackButton = document.getElementById("play-previous"),
-      playNextTrackButton = document.getElementById("play-next"),
+      playPreviousTrackButton = document.getElementById('play-previous'),
+      playNextTrackButton = document.getElementById('play-next'),
       currentIndex = -1,
       musics = [
         {
-          artwork: "1",
-          name: "Küskünüm",
-          artist: "Müslüm Gürses",
-          url: "./assets/musics/kuskunum.mp3",
+          artwork: '1',
+          name: 'Küskünüm',
+          artist: 'Müslüm Gürses',
+          url: './assets/musics/kuskunum.mp3'
         },
         {
-          artwork: "2",
-          name: "Çiçekler Açsın",
-          artist: "Ferdi Tayfur",
-          url: "./assets/musics/cicekler-acsin.mp3",
+          artwork: '2',
+          name: 'Çiçekler Açsın',
+          artist: 'Ferdi Tayfur',
+          url: './assets/musics/cicekler-acsin.mp3'
         },
         {
-          artwork: "3",
-          name: "Mevsim Bahar Olunca",
-          artist: "Orhan Gencabay",
-          url: "./assets/musics/mevsim-bahar-olunca.mp3",
+          artwork: '3',
+          name: 'Mevsim Bahar Olunca',
+          artist: 'Orhan Gencabay',
+          url: './assets/musics/mevsim-bahar-olunca.mp3'
         },
         {
-          artwork: "4",
-          name: "Fatmam",
-          artist: "Tolga Çandar",
-          url: "./assets/musics/fatmam.mp3",
+          artwork: '4',
+          name: 'Fatmam',
+          artist: 'Tolga Çandar',
+          url: './assets/musics/fatmam.mp3'
         },
         {
-          artwork: "5",
-          name: "Dünya",
-          artist: "KUAN",
-          url: "./assets/musics/dunya.mp3",
+          artwork: '5',
+          name: 'Dünya',
+          artist: 'KUAN',
+          url: './assets/musics/dunya.mp3'
         },
         {
-          artwork: "6",
-          name: "Altaylardan Tunaya",
-          artist: "Ali Aksoy",
-          url: "./assets/musics/altaylardan-tunaya.mp3",
-        },
+          artwork: '6',
+          name: 'Altaylardan Tunaya',
+          artist: 'Ali Aksoy',
+          url: './assets/musics/altaylardan-tunaya.mp3'
+        }
       ];
 
     function playOrPause() {
@@ -79,19 +79,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function play() {
-      musicPlayer.classList.add("active");
-      artistImage.classList.add("active");
+      musicPlayer.classList.add('active');
+      artistImage.classList.add('active');
       checkIfIsLoading();
-      i.className = "fa fa-pause";
+      i.className = 'fa fa-pause';
       audio.play();
     }
 
     function pause() {
-      musicPlayer.classList.remove("active");
-      artistImage.classList.remove("active");
+      musicPlayer.classList.remove('active');
+      artistImage.classList.remove('active');
       clearInterval(loadingInterval);
-      artistImage.classList.remove("buffering");
-      i.className = "fa fa-play";
+      artistImage.classList.remove('buffering');
+      i.className = 'fa fa-play';
       audio.pause();
     }
 
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       seekLength = event.clientX - seekBarPosition.left;
       seekLocation = audio.duration * (seekLength / seekContainer.offsetWidth);
 
-      sHover.style.width = seekLength + "px";
+      sHover.style.width = seekLength + 'px';
 
       cM = seekLocation / 60;
 
@@ -113,26 +113,26 @@ document.addEventListener("DOMContentLoaded", function () {
         isNaN(ctMinutes) ||
         isNaN(ctSeconds)
       ) {
-        targetTime.innerText = "--:--";
+        targetTime.innerText = '--:--';
       } else {
-        ctMinutes = ctMinutes < 10 ? "0" + ctMinutes : ctMinutes;
-        ctSeconds = ctSeconds < 10 ? "0" + ctSeconds : ctSeconds;
-        targetTime.innerText = ctMinutes + ":" + ctSeconds;
+        ctMinutes = ctMinutes < 10 ? '0' + ctMinutes : ctMinutes;
+        ctSeconds = ctSeconds < 10 ? '0' + ctSeconds : ctSeconds;
+        targetTime.innerText = ctMinutes + ':' + ctSeconds;
       }
 
-      targetTime.style.left = seekLength + "px";
-      targetTime.style.marginLeft = "-21px";
-      targetTime.style.display = "block";
+      targetTime.style.left = seekLength + 'px';
+      targetTime.style.marginLeft = '-21px';
+      targetTime.style.display = 'block';
     }
 
     function hideHover() {
-      sHover.style.width = "0";
-      targetTime.style.display = "none";
+      sHover.style.width = '0';
+      targetTime.style.display = 'none';
     }
 
     function changeCurrentSongTime() {
       audio.currentTime = seekLocation;
-      seekBar.style.width = seekLength + "px";
+      seekBar.style.width = seekLength + 'px';
     }
 
     function updateCurrentTime() {
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!timeFlag) {
         timeFlag = true;
-        songTime.classList.add("active");
+        songTime.classList.add('active');
       }
 
       currentMinutes = Math.floor(audio.currentTime / 60);
@@ -158,12 +158,12 @@ document.addEventListener("DOMContentLoaded", function () {
       durationSeconds = formatTime(durationSeconds);
 
       if (isNaN(currentMinutes) || isNaN(currentSeconds))
-        tProgress.innerText = "00:00";
-      else tProgress.innerText = currentMinutes + ":" + currentSeconds;
+        tProgress.innerText = '00:00';
+      else tProgress.innerText = currentMinutes + ':' + currentSeconds;
 
       if (isNaN(durationMinutes) || isNaN(durationSeconds))
-        songLength.innerText = "00:00";
-      else songLength.innerText = durationMinutes + ":" + durationSeconds;
+        songLength.innerText = '00:00';
+      else songLength.innerText = durationMinutes + ':' + durationSeconds;
 
       if (
         isNaN(currentMinutes) ||
@@ -171,10 +171,10 @@ document.addEventListener("DOMContentLoaded", function () {
         isNaN(durationMinutes) ||
         isNaN(durationSeconds)
       )
-        songTime.classList.remove("active");
-      else songTime.classList.add("active");
+        songTime.classList.remove('active');
+      else songTime.classList.add('active');
 
-      seekBar.style.width = playProgress + "%";
+      seekBar.style.width = playProgress + '%';
 
       if (playProgress == 100) {
         nextSong();
@@ -182,30 +182,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function formatTime(time) {
-      return time < 10 ? "0" + time : time;
+      return time < 10 ? '0' + time : time;
     }
 
     function nextSong() {
-      seekBar.style.width = "0";
-      tProgress.innerText = "00:00";
-      artistImage.classList.remove("buffering");
+      seekBar.style.width = '0';
+      tProgress.innerText = '00:00';
+      artistImage.classList.remove('buffering');
       selectSong(1);
       clearInterval(loadingInterval);
     }
 
     resetSongTime = () => {
-      seekBar.style.width = "0";
-      songTime.classList.remove("active");
-      tProgress.innerText = "00:00";
-      songLength.innerText = "00:00";
+      seekBar.style.width = '0';
+      songTime.classList.remove('active');
+      tProgress.innerText = '00:00';
+      songLength.innerText = '00:00';
     };
 
     function checkIfIsLoading() {
       clearInterval(loadingInterval);
       loadingInterval = setInterval(function () {
         if (nTime == 0 || bTime - nTime > 1000)
-          artistImage.classList.add("buffering");
-        else artistImage.classList.remove("buffering");
+          artistImage.classList.add('buffering');
+        else artistImage.classList.remove('buffering');
 
         bTime = new Date();
         bTime = bTime.getTime();
@@ -213,10 +213,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function resetSongTime() {
-      seekBar.style.width = "0";
-      songTime.classList.remove("active");
-      tProgress.innerText = "00:00";
-      songLength.innerText = "00:00";
+      seekBar.style.width = '0';
+      songTime.classList.remove('active');
+      tProgress.innerText = '00:00';
+      songLength.innerText = '00:00';
     }
 
     function selectSong(flag) {
@@ -226,10 +226,10 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex = currentIndex > musics.length - 1 ? 0 : currentIndex;
 
       if (currentIndex > -1 && currentIndex < musics.length) {
-        if (flag == 0) i.className = "fa fa-play";
+        if (flag == 0) i.className = 'fa fa-play';
         else {
-          artistImage.classList.remove("buffering");
-          i.className = "fa fa-pause";
+          artistImage.classList.remove('buffering');
+          i.className = 'fa fa-pause';
         }
 
         resetSongTime();
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setCurrentSong(flag) {
       localStorage.setItem(
-        "currentMusic",
+        'currentMusic',
         JSON.stringify(musics[currentIndex])
       );
 
@@ -254,8 +254,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (flag != 0) {
         audio.play();
-        musicPlayer.classList.add("active");
-        artistImage.classList.add("active");
+        musicPlayer.classList.add('active');
+        artistImage.classList.add('active');
 
         clearInterval(loadingInterval);
         checkIfIsLoading();
@@ -263,34 +263,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
       artistName.innerText = artist;
       songName.innerText = name;
-      document.querySelector("img.active").classList.remove("active");
-      document.getElementById(artwork).classList.add("active");
+      document.querySelector('img.active').classList.remove('active');
+      document.getElementById(artwork).classList.add('active');
 
-      const artworkBgUrl = document.getElementById(artwork).getAttribute("src");
+      const artworkBgUrl = document.getElementById(artwork).getAttribute('src');
 
-      bgArtwork.style.backgroundImage = "url(" + artworkBgUrl + ")";
+      bgArtwork.style.backgroundImage = 'url(' + artworkBgUrl + ')';
     }
 
     function initPlayer() {
       audio = new Audio();
       selectSong(0);
       audio.loop = false;
-      playPauseButton.addEventListener("click", playOrPause);
+      playPauseButton.addEventListener('click', playOrPause);
 
-      seekContainer.addEventListener("mousemove", function (event) {
+      seekContainer.addEventListener('mousemove', function (event) {
         showHover(event);
       });
 
-      seekContainer.addEventListener("mouseout", hideHover);
+      seekContainer.addEventListener('mouseout', hideHover);
 
-      seekContainer.addEventListener("click", changeCurrentSongTime);
+      seekContainer.addEventListener('click', changeCurrentSongTime);
 
-      audio.addEventListener("timeupdate", updateCurrentTime);
+      audio.addEventListener('timeupdate', updateCurrentTime);
 
-      playPreviousTrackButton.addEventListener("click", function () {
+      playPreviousTrackButton.addEventListener('click', function () {
         selectSong(-1);
       });
-      playNextTrackButton.addEventListener("click", function () {
+      playNextTrackButton.addEventListener('click', function () {
         selectSong(1);
       });
     }
